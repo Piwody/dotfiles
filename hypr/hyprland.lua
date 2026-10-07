@@ -374,3 +374,30 @@ hl.config({
   general = { gaps_in = 6, gaps_out = 12, border_size = 2 },
   decoration = { rounding = 10 },
 })
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave"))
+
+-- Mis cambios: look and feel
+hl.config({
+  general = {
+    col = {
+      active_border   = { colors = {"rgba(89b4faee)", "rgba(cba6f7ee)"}, angle = 45 },
+      inactive_border = "rgba(313244aa)",
+    },
+  },
+  decoration = {
+    inactive_opacity = 0.92,
+    shadow = { enabled = true, range = 15, render_power = 3, color = 0xee11111b },
+    blur = { enabled = true, size = 6, passes = 3, vibrancy = 0.17 },
+  },
+})
+
+-- Mis cambios: animaciones
+hl.curve("overshot", { type = "bezier", points = { {0.05, 0.9}, {0.1, 1.08} } })
+hl.curve("smooth",   { type = "bezier", points = { {0.25, 1},   {0.5, 1}    } })
+
+hl.animation({ leaf = "windowsIn",  enabled = true, speed = 5, bezier = "overshot", style = "popin 80%" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "smooth",   style = "popin 80%" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "overshot" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "overshot", style = "slide" })
+hl.animation({ leaf = "border",     enabled = true, speed = 6, bezier = "smooth" })
+hl.animation({ leaf = "borderangle", enabled = true, speed = 60, bezier = "smooth", style = "loop" })
