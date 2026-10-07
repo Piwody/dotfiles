@@ -1,0 +1,15 @@
+# Fuente
+font_family      JetBrainsMono Nerd Font
+font_size        11.0
+
+# Ventana
+background_opacity 0.90
+window_padding_width 10
+confirm_os_window_close 0
+
+# Cursor
+cursor_shape beam
+cursor_blink_interval 0.5
+
+# Sin sonido
+enable_audio_bell no
