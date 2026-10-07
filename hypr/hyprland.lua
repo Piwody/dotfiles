@@ -366,6 +366,7 @@ hl.window_rule({
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
+  hl.exec_cmd("hypridle")
   hl.exec_cmd("swaybg -m fill -i /home/mateo/dotfiles/wallpapers/wall.jpg")
 end)
 
@@ -405,3 +406,4 @@ hl.animation({ leaf = "borderangle", enabled = true, speed = 60, bezier = "smoot
 -- Mis cambios: cursor
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
