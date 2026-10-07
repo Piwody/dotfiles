@@ -10,7 +10,9 @@
   "modules-right": ["temperature", "cpu", "memory", "backlight", "pulseaudio", "network", "battery", "tray"],
 
   "hyprland/workspaces": {
-    "format": "{id}",
+    "format": "{icon}",
+    "format-icons": { "active": "\uf111", "default": "\uf10c" },
+    "persistent-workspaces": { "*": 5 },
     "on-click": "activate"
   },
   "mpris": {

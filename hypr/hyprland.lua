@@ -366,6 +366,7 @@ hl.window_rule({
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
+  hl.exec_cmd("nwg-dock-hyprland -i 42 -mb 10 -x -c \"wofi --show drun\"")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("swaybg -m fill -i /home/mateo/dotfiles/wallpapers/wall.jpg")
 end)
@@ -407,3 +408,17 @@ hl.animation({ leaf = "borderangle", enabled = true, speed = 60, bezier = "smoot
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+
+-- Mis cambios: blur en barra y dock (efecto glass)
+hl.layer_rule({
+  name  = "blur-dock",
+  match = { namespace = "^nwg-dock$" },
+  blur = true,
+  ignore_alpha = 0.05,
+})
+hl.layer_rule({
+  name  = "blur-waybar",
+  match = { namespace = "^waybar$" },
+  blur = true,
+  ignore_alpha = 0.05,
+})

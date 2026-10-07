@@ -36,3 +36,7 @@ window#waybar {
   border-radius: 10px;
 }
 #mpris.paused { color: #6c7086; }
+
+#workspaces button { font-size: 11px; padding: 0 5px; }
+#workspaces button.active { color: #89b4fa; }
+#workspaces button:hover { background: transparent; color: #cba6f7; }
