@@ -422,3 +422,4 @@ hl.layer_rule({
   blur = true,
   ignore_alpha = 0.05,
 })
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("/home/mateo/dotfiles/scripts/powermenu.sh"))

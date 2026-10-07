@@ -24,3 +24,4 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 eval "$(starship init bash)"
+fastfetch -l fedora_small
