@@ -366,4 +366,11 @@ hl.window_rule({
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
+  hl.exec_cmd("swaybg -m fill -i /home/mateo/dotfiles/wallpapers/wall.jpg")
 end)
+
+-- Mis cambios: estilo
+hl.config({
+  general = { gaps_in = 6, gaps_out = 12, border_size = 2 },
+  decoration = { rounding = 10 },
+})
