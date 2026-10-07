@@ -401,3 +401,7 @@ hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "oversh
 hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "overshot", style = "slide" })
 hl.animation({ leaf = "border",     enabled = true, speed = 6, bezier = "smooth" })
 hl.animation({ leaf = "borderangle", enabled = true, speed = 60, bezier = "smooth", style = "loop" })
+
+-- Mis cambios: cursor
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
