@@ -368,7 +368,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("mako")
   hl.exec_cmd("nwg-dock-hyprland -i 42 -mb 10 -x -c \"wofi --show drun\"")
   hl.exec_cmd("hypridle")
-  hl.exec_cmd("swaybg -m fill -i /home/mateo/dotfiles/wallpapers/wall.jpg")
+  hl.exec_cmd("swaybg -m fill -i /home/piwody/dotfiles/wallpapers/wall.jpg")
 end)
 
 -- Mis cambios: estilo
@@ -422,7 +422,7 @@ hl.layer_rule({
   blur = true,
   ignore_alpha = 0.05,
 })
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("/home/mateo/dotfiles/scripts/powermenu.sh"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("/home/piwody/dotfiles/scripts/powermenu.sh"))
 
 -- Mis cambios: manejo de ventanas
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
@@ -437,3 +437,10 @@ hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.resize({ x = -40, y = 0,   r
 hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 40,  y = 0,   relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + up",    hl.dsp.window.resize({ x = 0,   y = -40, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + down",  hl.dsp.window.resize({ x = 0,   y = 40,  relative = true }), { repeating = true })
+
+-- Mis cambios: ROG con gráfica híbrida (solo si existen las GPUs, así la HP no se rompe)
+local igpu = io.open("/dev/dri/amd-igpu")
+if igpu then
+  igpu:close()
+  hl.env("AQ_DRM_DEVICES", "/dev/dri/amd-igpu:/dev/dri/nvidia-dgpu")
+end
